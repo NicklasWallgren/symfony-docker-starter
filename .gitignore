@@ -1,0 +1,3 @@
+/symfony/vendor/
+/symfony/var/cache
+/symfony/var/sessions
