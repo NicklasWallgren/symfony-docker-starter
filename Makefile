@@ -82,10 +82,11 @@ bash-nginx: prerequisite
 
 # Opens the mysql cli
 mysql-cli:
-	- docker-compose -f docker/docker-compose.dev.yml exec mysql mysql -u root -psecret
+	- docker-compose -f docker/docker-compose.dev.yml exec mysql mysql -u root -p$(MYSQL_ROOT_PASSWORD)
 
 # Validates the prerequisites such as environment variable
 prerequisite: check-environment
+include .env
 export ENV_FILE = $(ENVIRONMENT_FILE)
 
 # Validates the environment variables
@@ -120,4 +121,5 @@ prompt-continue:
 	@:
 
 
+# Update readme file with correct identationen
 
